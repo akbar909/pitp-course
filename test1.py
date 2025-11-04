@@ -1,5 +1,5 @@
-# # Hidden Code Finder
-# # Solution: 54321
+# Hidden Code Finder
+# Solution: 54321
 # def find_hidden_code():
 #     for d1 in range(9, 0, -1):
 #         for d2 in range(d1 - 1, -1, -1):
@@ -12,7 +12,7 @@
 #                             return code
 # find_hidden_code()
 
-# # LEVEL 1 - Crack the Login
+# LEVEL 1 - Crack the Login
 # def level_1_crack_the_login():  
 #     print("LEVEL 1")
 #     print("Mission: Admin login system ko hack karein.")
@@ -44,7 +44,7 @@
 
 # level_1_crack_the_login()
 
-# # LEVEL 2 – Trace the Hidden Keyword
+# LEVEL 2 – Trace the Hidden Keyword
 
 # import time
 # def level_2_trace_hidden_keyword():  
@@ -60,7 +60,8 @@
 #         return
 
 #     start_time = time.time()
-#     while time.time() - start_time < 30:
+
+#     while time.time() - start_time < 10:
 #         userInput = input("Find hidden keyword = ").strip()
 #         if userInput == hidden_keyword:
 #             print("Aapne dhund liya hidden keyword:", hidden_keyword)
