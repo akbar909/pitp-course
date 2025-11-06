@@ -65,19 +65,7 @@ def train_model():
         np.random.seed(42)
         n = 1000
         
-        data = {
-            'gender': np.random.choice(['male', 'female'], n),
-            'race/ethnicity': np.random.choice(['group A', 'group B', 'group C', 'group D', 'group E'], n),
-            'parental level of education': np.random.choice([
-                'bachelor\'s degree', 'some college', 'master\'s degree', 
-                'associate\'s degree', 'high school', 'some high school'
-            ], n),
-            'lunch': np.random.choice(['standard', 'free/reduced'], n),
-            'test preparation course': np.random.choice(['none', 'completed'], n),
-            'math score': np.random.randint(0, 101, n),
-            'reading score': np.random.randint(0, 101, n),
-            'writing score': np.random.randint(0, 101, n)
-        }
+        data = pd.read_csv('StudentsPerformance.csv')
         
         df = pd.DataFrame(data)
         df['avg_score'] = (df['math score'] + df['reading score'] + df['writing score']) / 3
