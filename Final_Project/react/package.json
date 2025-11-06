@@ -11,14 +11,15 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.9.0",
-    "@stripe/react-stripe-js": "^5.2.0",
-    "@stripe/stripe-js": "^8.0.0",
     "@tailwindcss/vite": "^4.1.11",
+    "axios": "^1.6.2",
+    "lucide-react": "^0.552.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hot-toast": "^2.4.1",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.3",
-    "socket.io-client": "^4.8.1",
+    "recharts": "^2.8.0",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
