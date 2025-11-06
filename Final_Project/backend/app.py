@@ -13,18 +13,21 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 import pickle
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.config['JWT_SECRET_KEY'] = '1234656u43243456234'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=24)
 
+load_dotenv()
+MONGO_URI = os.getenv('MONGO_URI')
 jwt = JWTManager(app)
 CORS(app)
 
 # MongoDB connection
 try:
     # Option 1: Use local MongoDB (recommended for development)
-    client = MongoClient('mongodb+srv://RecipeSharingApp:RecipeSharingApp@cluster0.nakwd.mongodb.net/ai_security_system?retryWrites=true&w=majority&appName=Cluster0', serverSelectionTimeoutMS=5000)
+    client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
     
     # Test the connection
     client.admin.command('ping')
@@ -217,7 +220,7 @@ def predict():
         # Encode categorical features
         encoded_features = []
         categorical_columns = ['gender', 'race/ethnicity', 'parental level of education', 
-                             'lunch', 'test preparation course']
+                            'lunch', 'test preparation course']
         
         for col in categorical_columns:
             if col in label_encoders:
