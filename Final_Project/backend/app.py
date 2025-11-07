@@ -558,7 +558,6 @@ def delete_account():
             # Delete user
             del in_memory_users[username_to_delete]
             
-            # Delete user's predictions
             in_memory_predictions[:] = [pred for pred in in_memory_predictions if pred['user_id'] != user_id]
         
         return jsonify({'message': 'Account deleted successfully'}), 200
