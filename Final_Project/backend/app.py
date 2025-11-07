@@ -105,6 +105,9 @@ def train_model():
 # Load model
 model, label_encoders = train_model()
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({'message': 'Student Performance Prediction API is running'}), 200
 # Authentication routes
 @app.route('/api/register', methods=['POST'])
 def register():
